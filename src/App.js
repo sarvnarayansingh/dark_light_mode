@@ -1,11 +1,18 @@
-
+import React, {useState} from 'react'
 import './App.css';
+import ThemeContext from "./Context/ThemeContext"
+import Header from './Components/Header'
+import HeroSection from './Components/HeroSection'
 
 function App() {
+  const themeHooks = useState('light')
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <ThemeContext.Provider value={themeHooks}>
+      <div>
+      <Header />
+      <HeroSection />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
